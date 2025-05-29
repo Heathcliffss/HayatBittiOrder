@@ -19,10 +19,21 @@ public class Move : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+
+        // Mouse imlecini gizle ve kilitle
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     void Update()
     {
+        // ESC ile mouse'u geri getir
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
         // Zemin kontrolü
         isTouchingGround = Physics.CheckSphere(groundCheckPoint.position, groundCheckRadius, groundLayer);
 
@@ -38,7 +49,7 @@ public class Move : MonoBehaviour
         // Yerçekimi uygulama
         if (isTouchingGround && verticalVelocity < 0)
         {
-            verticalVelocity = -2f; // yere yapýþýk kalmasýný saðla
+            verticalVelocity = -2f;
         }
         else
         {
