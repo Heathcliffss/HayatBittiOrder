@@ -48,13 +48,13 @@ MonoBehaviour:
     m_OverrideState: 1
     m_Value: 3
   focusMode:
-    m_OverrideState: 1
-    m_Value: 2
-  focusDistance:
     m_OverrideState: 0
+    m_Value: 1
+  focusDistance:
+    m_OverrideState: 1
     m_Value: 10
   focusDistanceMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   nearFocusStart:
     m_OverrideState: 1
@@ -73,7 +73,7 @@ MonoBehaviour:
     m_Value: 4
   m_NearMaxBlur:
     m_OverrideState: 1
-    m_Value: 4
+    m_Value: 0.1
   m_FarSampleCount:
     m_OverrideState: 1
     m_Value: 16
