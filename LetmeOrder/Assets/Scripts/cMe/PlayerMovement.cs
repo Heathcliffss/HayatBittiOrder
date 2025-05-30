@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 	private float xRotation;
 	private float sensMultiplier = 1f;
 	private float jumpCooldown = 0.25f;
-	private float jumpForce = 400f;
+	private float jumpForce = 260f;
 	private float x;
 	private float y;
 	private float vel;
@@ -229,7 +229,7 @@ public class PlayerMovement : MonoBehaviour
 		    }
 		    if (wallRunning)
 		    {
-			    rb.AddForce(wallNormalVector * jumpForce * 3f);
+			    rb.AddForce(wallNormalVector * jumpForce * 1f);
 		    }
 		    Invoke("ResetJump", jumpCooldown);
 		    if (wallRunning)
