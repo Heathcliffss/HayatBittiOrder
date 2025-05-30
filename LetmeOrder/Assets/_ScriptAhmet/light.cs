@@ -4,33 +4,33 @@ using UnityEngine;
 
 public class light : MonoBehaviour
 {
-    public Light sahneIsigi;                // Sahnedeki ýþýk
-    public int kacKezFlesYapsin = 5;       // Kaç kere yanýp sönecek
-    public float acikSuresi = 0.2f;        // Iþýk açýk kalma süresi
-    public float kapaliSuresi = 0.2f;      // Iþýk kapalý kalma süresi
+    public Light isik; // Sahnedeki ýþýk
+    public int kacKezFlesYapsin = 5;
+    public float acikSuresi = 0.2f;
+    public float kapaliSuresi = 0.2f;
 
-    public yaratýk yaratigiBaslat;         // Yaratýk script referansý
+    public Yaratik yaratigiBaslat; // Yaratýk scriptini buraya atayacaðýz
 
     void Start()
     {
         StartCoroutine(IsikYanipSonme());
     }
 
-    IEnumerator IsikYanipSonme()
+    System.Collections.IEnumerator IsikYanipSonme()
     {
         for (int i = 0; i < kacKezFlesYapsin; i++)
         {
-            sahneIsigi.enabled = true;
+            isik.enabled = true;
             yield return new WaitForSeconds(acikSuresi);
 
-            sahneIsigi.enabled = false;
+            isik.enabled = false;
             yield return new WaitForSeconds(kapaliSuresi);
         }
 
-        // Sonunda ýþýk açýk kalsýn
-        sahneIsigi.enabled = true;
+        // Iþýk kalýcý olarak açýlsýn
+        isik.enabled = true;
 
-        // Kovalamayý baþlat
+        // Yaratýk kovalamaya baþlasýn
         if (yaratigiBaslat != null)
         {
             yaratigiBaslat.kovalamayaBaslasin = true;
