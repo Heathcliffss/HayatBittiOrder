@@ -454,7 +454,7 @@ MonoBehaviour:
     m_Value: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   tint:
     m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 0.35368368, g: 0.3481666, b: 0.4528302, a: 1}
   maxFogDistance:
     m_OverrideState: 0
     m_Value: 5000
@@ -561,7 +561,7 @@ MonoBehaviour:
     m_Value: 10
   intensity:
     m_OverrideState: 1
-    m_Value: 0.163
+    m_Value: 0.077
   response:
     m_OverrideState: 0
     m_Value: 0.8

@@ -14,7 +14,10 @@ public class Sil : MonoBehaviour
     {
         if (target != null)
         {
-            transform.rotation = target.rotation;
+            Vector3 currentRotation = transform.eulerAngles;
+            Vector3 targetRotation = target.eulerAngles;
+
+            transform.rotation = Quaternion.Euler(currentRotation.x, targetRotation.y, currentRotation.z);
         }
     }
 }
