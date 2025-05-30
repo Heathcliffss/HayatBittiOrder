@@ -11,11 +11,13 @@ public class Kapi1Degisim : MonoBehaviour
     public GameObject degisim;
     public GameObject Corridor2;
     public GameObject Corridor1;
+    public GameObject ilksahne;
 
     void Start()
     {
         Trigger.SetActive(false);
         Corridor2.SetActive(false);
+        ilksahne.SetActive(true);
     }
 
     // Update is called once per frame
