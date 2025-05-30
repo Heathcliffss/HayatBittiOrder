@@ -229,7 +229,7 @@ public class PlayerMovement : MonoBehaviour
 		    }
 		    if (wallRunning)
 		    {
-			    rb.AddForce(wallNormalVector * jumpForce * 1f);
+			    rb.AddForce(wallNormalVector * jumpForce * 3f);
 		    }
 		    Invoke("ResetJump", jumpCooldown);
 		    if (wallRunning)
