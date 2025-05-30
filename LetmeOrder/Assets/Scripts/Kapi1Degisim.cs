@@ -9,11 +9,13 @@ public class Kapi1Degisim : MonoBehaviour
       public GameObject Kapi1;
     public GameObject Trigger;
     public GameObject degisim;
+    public GameObject Corridor2;
     public GameObject Corridor1;
 
     void Start()
     {
         Trigger.SetActive(false);
+        Corridor2.SetActive(false);
     }
 
     // Update is called once per frame
@@ -32,8 +34,9 @@ public class Kapi1Degisim : MonoBehaviour
                 if (hit.collider.gameObject == Kapi1)
                 {
                     Debug.Log("SahneKapandi");
-                     Trigger.SetActive(true);
+                    Trigger.SetActive(true);
                     Corridor1.SetActive(false);
+                    Corridor2.SetActive(true);
                    
                 }
             }
