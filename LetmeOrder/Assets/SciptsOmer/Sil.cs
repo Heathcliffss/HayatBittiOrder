@@ -14,6 +14,7 @@ public class Sil : MonoBehaviour
     {
         if (target != null)
         {
+            Cursor.lockState = CursorLockMode.Locked;
             Vector3 currentRotation = transform.eulerAngles;
             Vector3 targetRotation = target.eulerAngles;
 
