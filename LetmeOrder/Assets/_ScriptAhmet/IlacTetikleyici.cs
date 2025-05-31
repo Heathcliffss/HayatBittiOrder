@@ -4,8 +4,18 @@ using UnityEngine;
 public class IlacAlma : MonoBehaviour
 {
     public List<GameObject> havada;  // Havada süzülen nesneler listesi
+    public GameObject engel;
+    public GameObject merdivenfly;
+    public GameObject merdivenfall;
+    public GameObject soundeffect;
+    public GameObject soundeffect2;
 
     private bool ilacAlindi = false;  // İlacın alınıp alınmadığını kontrol için
+    void Start()
+    {
+        merdivenfly.SetActive(true);
+        merdivenfall.SetActive(false);
+    }
 
     void Update()
     {
@@ -28,6 +38,12 @@ public class IlacAlma : MonoBehaviour
                         {
                             rb.isKinematic = false;  // Fizik etkileşimine izin ver
                             rb.useGravity = true;    // Yerçekimini aktif et
+                            engel.SetActive(false);
+                            merdivenfly.SetActive(false);
+                            merdivenfall.SetActive(true);
+                            soundeffect.SetActive(false);
+                            soundeffect2.SetActive(true);
+
                         }
 
                         yukariasaga hareketScripti = nesne.GetComponent<yukariasaga>();
