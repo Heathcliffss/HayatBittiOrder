@@ -6,7 +6,7 @@ public class Tvkontrol : MonoBehaviour
     public GameObject tv;
     public GameObject pilObjesi;
     public GameObject kumandaObjesi;
-    public GameObject tvObjesi; // tv (1)
+    public GameObject tvObjesi; // TV (1)
     public GameObject sonrakiOlayObjesi;
 
     public NesneYokOlma nesneYokOlmaScripti;
@@ -25,38 +25,42 @@ public class Tvkontrol : MonoBehaviour
         {
             tvVideo.Stop(); // Başlangıçta durdur
         }
-
-
     }
 
     void Update()
     {
-        if (Vector3.Distance(pilObjesi.transform.position, PlayerPozisyonu()) < 2f && Input.GetKeyDown(KeyCode.E))
+        Vector3 playerPos = PlayerPozisyonu();
+
+        // Pil alma (menzil 4f)
+        if (Vector3.Distance(pilObjesi.transform.position, playerPos) < 4f && Input.GetKeyDown(KeyCode.E))
         {
             pilAlindi = true;
             pilObjesi.SetActive(false);
         }
 
+        // Kumanda alma (menzil 4f)
         if (pilAlindi && !kumandaAlindi &&
-            Vector3.Distance(kumandaObjesi.transform.position, PlayerPozisyonu()) < 2f && Input.GetKeyDown(KeyCode.E))
+            Vector3.Distance(kumandaObjesi.transform.position, playerPos) < 4f && Input.GetKeyDown(KeyCode.E))
         {
             kumandaAlindi = true;
             kumandaObjesi.SetActive(false);
         }
 
-        if (kumandaAlindi && !tvAcildi && Input.GetKeyDown(KeyCode.H))
+        // TV açma: kumanda alındı, TV kapalı, E tuşu ve TV’ye bakılıyor
+        if (kumandaAlindi && !tvAcildi && Input.GetKeyDown(KeyCode.E))
         {
-            tvAcildi = true;
-
-            if (tvVideo != null)
+            if (BakiyorMu(tvObjesi.transform, Camera.main.transform, 30f))  // 30 derece açı eşiği
             {
-                tv.SetActive(true);
-                tvVideo.Play(); // 🎬 Video başlat
+                tvAcildi = true;
+
+                if (tvVideo != null)
+                {
+                    tv.SetActive(true);
+                    tvVideo.Play(); // 🎬 Video başlat
+                }
+
+                Invoke("TVSonrasiOlay", 12f);
             }
-
-
-
-            Invoke("TVSonrasiOlay", 12f); // 10 saniye sonra olay başlat
         }
     }
 
@@ -71,5 +75,12 @@ public class Tvkontrol : MonoBehaviour
     Vector3 PlayerPozisyonu()
     {
         return Camera.main.transform.position;
+    }
+
+    bool BakiyorMu(Transform hedef, Transform bakisNoktasi, float maxAci)
+    {
+        Vector3 yon = (hedef.position - bakisNoktasi.position).normalized;
+        float aci = Vector3.Angle(bakisNoktasi.forward, yon);
+        return aci <= maxAci;
     }
 }
