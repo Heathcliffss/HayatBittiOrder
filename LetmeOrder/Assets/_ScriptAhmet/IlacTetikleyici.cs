@@ -3,34 +3,43 @@ using UnityEngine;
 
 public class IlacAlma : MonoBehaviour
 {
-    public List<GameObject> havada;  // Havada süzülen nesneler listesi
+    public List<GameObject> havada;  // Havada sÃ¼zÃ¼len nesneler listesi
 
-    private bool ilacAlindi = false;  // Ýlacýn alýnýp alýnmadýðýný kontrol için
+    private bool ilacAlindi = false;  // Ä°lacÄ±n alÄ±nÄ±p alÄ±nmadÄ±ÄŸÄ±nÄ± kontrol iÃ§in
 
     void Update()
     {
         if (!ilacAlindi && Input.GetKeyDown(KeyCode.E))
         {
-            ilacAlindi = true;
+            Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+            RaycastHit hit;
 
-            foreach (GameObject nesne in havada)
+            if (Physics.Raycast(ray, out hit, 3f)) // 3 birimlik mesafede kontrol
             {
-                Rigidbody rb = nesne.GetComponent<Rigidbody>();
-                if (rb != null)
+                IlacAlma ilac = hit.collider.GetComponent<IlacAlma>();
+                if (ilac != null && ilac == this)
                 {
-                    rb.isKinematic = false;  // Fizik etkileþimine izin ver
-                    rb.useGravity = true;    // Yerçekimini aktif et
-                }
+                    ilacAlindi = true;
 
-                yukariasaga hareketScripti = nesne.GetComponent<yukariasaga>();
-                if (hareketScripti != null)
-                {
-                    hareketScripti.enabled = false;  // Yukarý-aþaðý hareketi durdur
+                    foreach (GameObject nesne in havada)
+                    {
+                        Rigidbody rb = nesne.GetComponent<Rigidbody>();
+                        if (rb != null)
+                        {
+                            rb.isKinematic = false;  // Fizik etkileÅŸimine izin ver
+                            rb.useGravity = true;    // YerÃ§ekimini aktif et
+                        }
+
+                        yukariasaga hareketScripti = nesne.GetComponent<yukariasaga>();
+                        if (hareketScripti != null)
+                        {
+                            hareketScripti.enabled = false;  // YukarÄ±-aÅŸaÄŸÄ± hareketi durdur
+                        }
+                    }
+
+                    Destroy(gameObject);
                 }
             }
-
-            // Bu scriptin baðlý olduðu nesne (ilac) yok edilir
-            Destroy(gameObject);
         }
     }
 }
