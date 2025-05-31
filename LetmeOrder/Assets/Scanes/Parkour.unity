@@ -19473,7 +19473,7 @@ GameObject:
   - component: {fileID: 575711221}
   m_Layer: 0
   m_Name: KosanAdamCem
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19487,7 +19487,7 @@ Transform:
   m_GameObject: {fileID: 575711220}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.023685489, z: -0, w: 0.9997195}
-  m_LocalPosition: {x: -0.58, y: 2.19, z: -10.53}
+  m_LocalPosition: {x: -0.443, y: 2.64, z: -9.593}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38944,6 +38944,125 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1748706151}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1112694880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1112694885}
+  - component: {fileID: 1112694884}
+  - component: {fileID: 1112694883}
+  - component: {fileID: 1112694882}
+  - component: {fileID: 1112694886}
+  m_Layer: 0
+  m_Name: gecistrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1112694882
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112694880}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1112694883
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112694880}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 257
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 73c176f402d2c2f4d929aa5da7585d17, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1112694884
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112694880}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1112694885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112694880}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 61.01, y: -20.43, z: -183.50148}
+  m_LocalScale: {x: 11.394553, y: 1.243229, z: 16.627361}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1112694886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112694880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fef78e9c8a0d4c7c9a6587a2f64ac5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hedefSahneAdi1: FirstScene
 --- !u!1 &1117347941
 GameObject:
   m_ObjectHideFlags: 0
@@ -53629,12 +53748,32 @@ PrefabInstance:
     - target: {fileID: 924452964482813062, guid: 730901a8e122e41c98c61ad1188d15d3,
         type: 3}
       propertyPath: m_Intensity
-      value: 2727.67
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924452964482813062, guid: 730901a8e122e41c98c61ad1188d15d3,
+        type: 3}
+      propertyPath: m_ShapeRadius
+      value: 2.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 924452964482813062, guid: 730901a8e122e41c98c61ad1188d15d3,
+        type: 3}
+      propertyPath: m_PointlightHDType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462901200987127083, guid: 730901a8e122e41c98c61ad1188d15d3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.36
       objectReference: {fileID: 0}
     - target: {fileID: 4462901200987127083, guid: 730901a8e122e41c98c61ad1188d15d3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.9
+      value: 21.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462901200987127083, guid: 730901a8e122e41c98c61ad1188d15d3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6.6
       objectReference: {fileID: 0}
     - target: {fileID: 4527833984551331809, guid: 730901a8e122e41c98c61ad1188d15d3,
         type: 3}
@@ -53646,6 +53785,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Florasan (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4913494296786566019, guid: 730901a8e122e41c98c61ad1188d15d3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5528018898600484906, guid: 730901a8e122e41c98c61ad1188d15d3,
         type: 3}
       propertyPath: m_Enabled
@@ -53654,17 +53798,27 @@ PrefabInstance:
     - target: {fileID: 5528018898600484906, guid: 730901a8e122e41c98c61ad1188d15d3,
         type: 3}
       propertyPath: m_Intensity
-      value: 730.84534
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5528018898600484906, guid: 730901a8e122e41c98c61ad1188d15d3,
+        type: 3}
+      propertyPath: m_ShadowRadius
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 5528018898600484906, guid: 730901a8e122e41c98c61ad1188d15d3,
         type: 3}
       propertyPath: m_Shadows.m_Type
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5528018898600484906, guid: 730901a8e122e41c98c61ad1188d15d3,
         type: 3}
       propertyPath: m_ColorTemperature
       value: 10102
+      objectReference: {fileID: 0}
+    - target: {fileID: 5528018898600484906, guid: 730901a8e122e41c98c61ad1188d15d3,
+        type: 3}
+      propertyPath: m_UseBoundingSphereOverride
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5727432670622687545, guid: 730901a8e122e41c98c61ad1188d15d3,
         type: 3}
@@ -66190,12 +66344,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1958844301}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc268d5a145a7ad479498e58e6be4da5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallThreshold: -25
+  fallThreshold: -36.4
 --- !u!1001 &1961065954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67378,6 +67532,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Florasan (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913494296786566019, guid: 730901a8e122e41c98c61ad1188d15d3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5528018898600484906, guid: 730901a8e122e41c98c61ad1188d15d3,
         type: 3}
@@ -72523,3 +72682,4 @@ SceneRoots:
   - {fileID: 1072223937}
   - {fileID: 690844406}
   - {fileID: 1982836372}
+  - {fileID: 1112694885}
