@@ -56,6 +56,8 @@ public class PlayerMovement : MonoBehaviour
 	private bool cancellingWall;
 	private bool cancellingSurf;
 
+
+
     //Private Vector3's
 	private Vector3 grapplePoint;
 	private Vector3 normalVector;
@@ -229,7 +231,7 @@ public class PlayerMovement : MonoBehaviour
 		    }
 		    if (wallRunning)
 		    {
-			    rb.AddForce(wallNormalVector * jumpForce * 1f);
+			    rb.AddForce(wallNormalVector * jumpForce * 3f);
 		    }
 		    Invoke("ResetJump", jumpCooldown);
 		    if (wallRunning)
