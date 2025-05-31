@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-
 public class NesneYokOlma : MonoBehaviour
 {
     public Transform oyuncu;
@@ -29,17 +28,11 @@ public class NesneYokOlma : MonoBehaviour
             return;
         }
 
-        // Malzemeleri topla
+        // Malzemeleri topla (sadece oda1 için çünkü oda2 henüz aktif deðil)
         oda1Materyaller = GetAllMaterials(oda1);
-        oda2Materyaller = GetAllMaterials(oda2);
 
-        // Oda2'yi baþlangýçta þeffaf yap
-        foreach (var mat in oda2Materyaller)
-        {
-            Color renk = mat.color;
-            renk.a = 0f;
-            mat.color = renk;
-        }
+        // Oda2'yi tamamen devre dýþý býrak
+        oda2.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
@@ -54,6 +47,18 @@ public class NesneYokOlma : MonoBehaviour
     {
         gecisBasladi = true;
         yield return new WaitForSeconds(odadaKalmaSuresi);
+
+        // Oda2'yi aktif et ve materyallerini topla
+        oda2.SetActive(true);
+        oda2Materyaller = GetAllMaterials(oda2);
+
+        // Oda2 materyallerini tamamen þeffaf baþlat
+        foreach (var mat in oda2Materyaller)
+        {
+            Color c = mat.color;
+            c.a = 0f;
+            mat.color = c;
+        }
 
         float zaman = 0f;
 
@@ -79,7 +84,7 @@ public class NesneYokOlma : MonoBehaviour
             yield return null;
         }
 
-        // Tamamen geçiþ yaptýktan sonra oda1 yok edilebilir (isteðe baðlý)
+        // Geçiþ tamamlandýktan sonra oda1'i yok et
         Destroy(oda1);
     }
 
