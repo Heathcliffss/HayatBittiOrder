@@ -1,20 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Video;
 
 public class Tvkontrol : MonoBehaviour
 {
+    public GameObject tv;
     public GameObject pilObjesi;
     public GameObject kumandaObjesi;
-    public GameObject tvObjesi;
+    public GameObject tvObjesi; // tv (1)
     public AudioSource tvSes;
     public GameObject sonrakiOlayObjesi;
 
-    public NesneYokOlma nesneYokOlmaScripti; // BURASI YENİ
+    public NesneYokOlma nesneYokOlmaScripti;
 
+    private VideoPlayer tvVideo;
     private bool pilAlindi = false;
     private bool kumandaAlindi = false;
     private bool tvAcildi = false;
+
+    void Start()
+    {
+        tv.SetActive(false);
+        tvVideo = tvObjesi.GetComponentInChildren<VideoPlayer>();
+
+        if (tvVideo != null)
+        {
+            tvVideo.Stop(); // Başlangıçta durdur
+        }
+
+        if (tvSes != null)
+        {
+            tvSes.Stop();
+        }
+    }
 
     void Update()
     {
@@ -34,18 +51,27 @@ public class Tvkontrol : MonoBehaviour
         if (kumandaAlindi && !tvAcildi && Input.GetKeyDown(KeyCode.H))
         {
             tvAcildi = true;
-            tvObjesi.SetActive(true);
-            if (tvSes != null) tvSes.Play();
-            Invoke("TVSonrasiOlay", 10f); // 10 saniye sonra geçiş olacak
+
+            if (tvVideo != null)
+            {
+                tv.SetActive(true);
+                tvVideo.Play(); // 🎬 Video başlat
+            }
+
+            if (tvSes != null)
+            {
+                tvSes.Play(); // 🎵 Ses başlat
+            }
+
+            Invoke("TVSonrasiOlay", 10f); // 10 saniye sonra olay başlat
         }
     }
 
     void TVSonrasiOlay()
     {
-        // Olayı tetikle
         if (nesneYokOlmaScripti != null)
         {
-            StartCoroutine(nesneYokOlmaScripti.OdaDegisimiRutini()); // 🔥 BURASI ÇAĞRI
+            StartCoroutine(nesneYokOlmaScripti.OdaDegisimiRutini());
         }
     }
 
