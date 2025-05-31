@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Yaratik : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Yaratik : MonoBehaviour
     public float durmaMesafesi = 5f; // Yaratığın duracağı mesafe
     public Light ortamIsigi; // Işık objesi
     public bool kovalamayaBaslasin = false; // Kovalamaya başlama durumu
+
+
 
     void Update()
     {
@@ -38,6 +41,14 @@ public class Yaratik : MonoBehaviour
         {
             // Çok yaklaştıysa sadece oyuncuya bak
             transform.LookAt(oyuncu);
+        }
+    }
+     void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            // Aktif sahneyi yeniden yükle
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

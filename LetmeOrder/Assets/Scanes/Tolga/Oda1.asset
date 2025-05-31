@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d08ce26990eb1a4a9177b860541e702, type: 3}
   m_Name: Exposure
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   mode:
     m_OverrideState: 1
     m_Value: 0
@@ -358,7 +358,7 @@ MonoBehaviour:
     m_Value: 1
   fixedExposure:
     m_OverrideState: 1
-    m_Value: 0.6665781
+    m_Value: 0.3332447
   compensation:
     m_OverrideState: 0
     m_Value: 9.55
@@ -660,7 +660,7 @@ MonoBehaviour:
     m_Value: 50
   meanFreePath:
     m_OverrideState: 1
-    m_Value: 7.31
+    m_Value: 52.63
   enableVolumetricFog:
     m_OverrideState: 1
     m_Value: 1
