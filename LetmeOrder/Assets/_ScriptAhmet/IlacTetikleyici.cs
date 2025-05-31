@@ -11,6 +11,8 @@ public class IlacAlma : MonoBehaviour
     public GameObject soundeffect2;
     public GameObject horrorscene;
 
+    public AudioSource fall;
+
     private bool ilacAlindi = false;  // İlacın alınıp alınmadığını kontrol için
     void Start()
     {
@@ -46,6 +48,7 @@ public class IlacAlma : MonoBehaviour
                             soundeffect.SetActive(false);
                             soundeffect2.SetActive(true);
                             horrorscene.SetActive(true);
+                            fall.Play();
 
                         }
 
