@@ -27,10 +27,10 @@ MonoBehaviour:
     m_Value: 1
   upperHemisphereLuxValue:
     m_OverrideState: 1
-    m_Value: 0.0058265314
+    m_Value: 0.005902251
   upperHemisphereLuxColor:
     m_OverrideState: 1
-    m_Value: {x: 0.5, y: 0.47848773, z: 0.45966908}
+    m_Value: {x: 0.5, y: 0.47802484, z: 0.4595353}
   desiredLuxValue:
     m_OverrideState: 1
     m_Value: 0.5
