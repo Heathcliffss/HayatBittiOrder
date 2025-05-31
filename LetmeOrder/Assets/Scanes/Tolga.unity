@@ -10614,7 +10614,7 @@ PrefabInstance:
     - target: {fileID: 5578247626243811204, guid: 277bab7f50e91416e85fa54e6b259bf4,
         type: 3}
       propertyPath: Loop
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5578247626243811204, guid: 277bab7f50e91416e85fa54e6b259bf4,
         type: 3}
@@ -10644,7 +10644,7 @@ PrefabInstance:
     - target: {fileID: 5578247626243811204, guid: 277bab7f50e91416e85fa54e6b259bf4,
         type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5578247626243811204, guid: 277bab7f50e91416e85fa54e6b259bf4,
         type: 3}
