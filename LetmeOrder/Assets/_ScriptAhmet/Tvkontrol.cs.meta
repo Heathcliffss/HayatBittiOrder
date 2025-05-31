@@ -3,7 +3,13 @@ guid: 0665a8ba2b85558428cd640ce537a3af
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - pilObjesi: {instanceID: 0}
+  - kumandaObjesi: {instanceID: 0}
+  - tvObjesi: {instanceID: 0}
+  - tvSes: {instanceID: 0}
+  - sonrakiOlayObjesi: {instanceID: 0}
+  - nesneYokOlmaScripti: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -55,9 +55,12 @@ public class NesneYokOlma : MonoBehaviour
         // Oda2 materyallerini tamamen þeffaf baþlat
         foreach (var mat in oda2Materyaller)
         {
-            Color c = mat.color;
-            c.a = 0f;
-            mat.color = c;
+            if (mat.HasProperty("_Color"))
+            {
+                Color c = mat.color;
+                c.a = 0f;
+                mat.color = c;
+            }
         }
 
         float zaman = 0f;
@@ -68,16 +71,22 @@ public class NesneYokOlma : MonoBehaviour
 
             foreach (var mat in oda1Materyaller)
             {
-                Color c = mat.color;
-                c.a = Mathf.Lerp(1f, 0f, oran);
-                mat.color = c;
+                if (mat.HasProperty("_Color"))
+                {
+                    Color c = mat.color;
+                    c.a = Mathf.Lerp(1f, 0f, oran);
+                    mat.color = c;
+                }
             }
 
             foreach (var mat in oda2Materyaller)
             {
-                Color c = mat.color;
-                c.a = Mathf.Lerp(0f, 1f, oran);
-                mat.color = c;
+                if (mat.HasProperty("_Color"))
+                {
+                    Color c = mat.color;
+                    c.a = Mathf.Lerp(0f, 1f, oran);
+                    mat.color = c;
+                }
             }
 
             zaman += Time.deltaTime;
@@ -85,7 +94,7 @@ public class NesneYokOlma : MonoBehaviour
         }
 
         // Geçiþ tamamlandýktan sonra oda1'i yok et
-        Destroy(oda1);
+        oda1.SetActive(false);
     }
 
     List<Material> GetAllMaterials(GameObject obj)
