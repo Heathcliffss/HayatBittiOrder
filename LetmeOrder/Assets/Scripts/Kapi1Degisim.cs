@@ -12,6 +12,7 @@ public class Kapi1Degisim : MonoBehaviour
     public GameObject Corridor2;
     public GameObject Corridor1;
     public GameObject ilksahne;
+    public GameObject kornis;
 
     public Animator kapikulpacik;
 
@@ -47,6 +48,7 @@ public class Kapi1Degisim : MonoBehaviour
                     Trigger.SetActive(true);
                     Corridor1.SetActive(false);
                     Corridor2.SetActive(true);
+                   
 
                 }
             }
@@ -65,6 +67,7 @@ public class Kapi1Degisim : MonoBehaviour
                 Debug.Log("SahneKapandi");
                 degisim.SetActive(false);
                 Trigger.SetActive(false);
+                 kornis.SetActive(true);
             }
         }
     }
