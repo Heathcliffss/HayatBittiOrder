@@ -6,7 +6,7 @@ using UnityEngine.Rendering.HighDefinition;
 
 public class parkurpostproses : MonoBehaviour
 {
-   public Volume globalVolume1;
+    public Volume globalVolume1;
 
     private FilmGrain filmGrain;
     private Exposure exposure;
@@ -17,8 +17,11 @@ public class parkurpostproses : MonoBehaviour
     public float grainHedef = 0.1f;
     public float gecisHizi = 1f;
 
+    public AudioSource horrorsound;
+
     void Start()
     {
+            StartCoroutine(sesbekle());
         if (globalVolume1 != null && globalVolume1.profile != null)
         {
             // FilmGrain ve Exposure bileşenlerine eriş
@@ -52,5 +55,10 @@ public class parkurpostproses : MonoBehaviour
                 gecisHizi * Time.deltaTime
             );
         }
+    }
+    IEnumerator sesbekle()
+    {
+        yield return new WaitForSeconds(3f);
+        horrorsound.Play();
     }
 }
