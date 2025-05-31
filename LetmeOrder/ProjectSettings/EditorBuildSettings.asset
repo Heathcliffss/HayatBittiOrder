@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MainScane.unity
-    guid: 8124e5870f4fd4c779e7a5f994e84ad1
+    path: Assets/Scanes/AnaMenu.unity
+    guid: 0badbe6b44d9694419d77ed042418e58
   - enabled: 1
     path: Assets/Scanes/Tolga.unity
     guid: 12695d7bda075b4438281f274e74d7bd
+  - enabled: 1
+    path: Assets/Scanes/Parkour.unity
+    guid: ab0462e41c43c2246b0af2b7aba45cca
   m_configObjects: {}

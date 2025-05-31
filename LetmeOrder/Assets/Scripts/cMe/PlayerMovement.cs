@@ -56,6 +56,8 @@ public class PlayerMovement : MonoBehaviour
 	private bool cancellingWall;
 	private bool cancellingSurf;
 
+
+
     //Private Vector3's
 	private Vector3 grapplePoint;
 	private Vector3 normalVector;
