@@ -9,12 +9,14 @@ public class IlacAlma : MonoBehaviour
     public GameObject merdivenfall;
     public GameObject soundeffect;
     public GameObject soundeffect2;
+    public GameObject horrorscene;
 
     private bool ilacAlindi = false;  // İlacın alınıp alınmadığını kontrol için
     void Start()
     {
         merdivenfly.SetActive(true);
         merdivenfall.SetActive(false);
+        horrorscene.SetActive(false);
     }
 
     void Update()
@@ -43,6 +45,7 @@ public class IlacAlma : MonoBehaviour
                             merdivenfall.SetActive(true);
                             soundeffect.SetActive(false);
                             soundeffect2.SetActive(true);
+                            horrorscene.SetActive(true);
 
                         }
 

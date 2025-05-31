@@ -6,6 +6,10 @@ public class hastanekapiacil : MonoBehaviour
 {
     public Animator kapisol;
     public Animator kapisag;
+    public AudioSource acil;
+    public AudioSource kapan;
+
+
 
     public float menzil1 = 5f;
    
@@ -39,6 +43,7 @@ public class hastanekapiacil : MonoBehaviour
         {
             kapisol.Play("hastanekapi1");
             kapisag.Play("hastanekapi2");
+            acil.Play();
             kapidurum = true;
         }
     }
@@ -48,6 +53,7 @@ public class hastanekapiacil : MonoBehaviour
         {
              kapisol.Play("hastanekapi11");
             kapisag.Play("hastanekapi21");
+            kapan.Play();
             kapidurum = false;
         }
     }
