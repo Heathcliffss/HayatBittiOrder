@@ -1994,7 +1994,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 202bfe8a2455a8748b1590ffdcfbdea2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.803
+      value: -1.8073
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 202bfe8a2455a8748b1590ffdcfbdea2,
         type: 3}
@@ -2318,6 +2318,12 @@ MonoBehaviour:
   - {fileID: 2135786278}
   - {fileID: 440070644}
   - {fileID: 1866497407}
+  engel: {fileID: 0}
+  merdivenfly: {fileID: 0}
+  merdivenfall: {fileID: 0}
+  soundeffect: {fileID: 0}
+  soundeffect2: {fileID: 0}
+  horrorscene: {fileID: 0}
 --- !u!54 &961408536
 Rigidbody:
   m_ObjectHideFlags: 0
