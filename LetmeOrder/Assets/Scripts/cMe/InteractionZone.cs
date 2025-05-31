@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class InteractionZone : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject hintText; // TextMeshPro UI yazý objesi
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            hintText.SetActive(true);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit(Collider other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            hintText.SetActive(false);
+        }
     }
 }
