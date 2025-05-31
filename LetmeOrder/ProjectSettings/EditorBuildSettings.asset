@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scanes/Parkour.unity
     guid: ab0462e41c43c2246b0af2b7aba45cca
+  - enabled: 1
+    path: Assets/Scanes/Horror/FirstScene.unity
+    guid: 55b99675db440f949b2a6ddc8f892492
   m_configObjects: {}

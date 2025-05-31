@@ -58,7 +58,7 @@ public class parkurpostproses : MonoBehaviour
     }
     IEnumerator sesbekle()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         horrorsound.Play();
     }
 }
