@@ -5712,7 +5712,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.9566321, y: 1.0547863, z: 2.3188596}
   m_Center: {x: -0.048840165, y: 0.45019174, z: 0.054432545}
@@ -26182,8 +26182,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.009999999, y: 2.2204458e-18, z: 0.01}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.030554928, y: 0.0005906328, z: 0.01}
+  m_Center: {x: -0.00053453963, y: 0.00029532405, z: 0.0000000030163674}
 --- !u!1 &749557766 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0f8bfe0287c0043eb87e7e7fe4287799,
@@ -30195,8 +30195,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.02939063, y: 2.2204458e-18, z: 0.059260614}
-  m_Center: {x: -0.009695603, y: 0, z: -0.024630819}
+  m_Size: {x: 0.02939063, y: 0.0004705315, z: 0.059260614}
+  m_Center: {x: -0.009695606, y: 0.00023526586, z: -0.024630819}
 --- !u!1001 &853787317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31484,7 +31484,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.9566321, y: 1.0547863, z: 2.3188596}
   m_Center: {x: -0.048840165, y: 0.45019174, z: 0.054432545}
@@ -51299,37 +51299,37 @@ PrefabInstance:
     - target: {fileID: 5903724843590276935, guid: 351b5e384b1ee44dfa2a9f514d499eb0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.25
+      value: 9.619835
       objectReference: {fileID: 0}
     - target: {fileID: 5903724843590276935, guid: 351b5e384b1ee44dfa2a9f514d499eb0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.12958336
+      value: 0.12958312
       objectReference: {fileID: 0}
     - target: {fileID: 5903724843590276935, guid: 351b5e384b1ee44dfa2a9f514d499eb0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.16
+      value: -9.843908
       objectReference: {fileID: 0}
     - target: {fileID: 5903724843590276935, guid: 351b5e384b1ee44dfa2a9f514d499eb0,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6830136
+      value: 0.64359033
       objectReference: {fileID: 0}
     - target: {fileID: 5903724843590276935, guid: 351b5e384b1ee44dfa2a9f514d499eb0,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.18301292
+      value: -0.2929044
       objectReference: {fileID: 0}
     - target: {fileID: 5903724843590276935, guid: 351b5e384b1ee44dfa2a9f514d499eb0,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.18301281
+      value: 0.29290393
       objectReference: {fileID: 0}
     - target: {fileID: 5903724843590276935, guid: 351b5e384b1ee44dfa2a9f514d499eb0,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.6830118
+      value: -0.6435883
       objectReference: {fileID: 0}
     - target: {fileID: 5903724843590276935, guid: 351b5e384b1ee44dfa2a9f514d499eb0,
         type: 3}
@@ -51339,7 +51339,7 @@ PrefabInstance:
     - target: {fileID: 5903724843590276935, guid: 351b5e384b1ee44dfa2a9f514d499eb0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 30
+      value: 48.942
       objectReference: {fileID: 0}
     - target: {fileID: 5903724843590276935, guid: 351b5e384b1ee44dfa2a9f514d499eb0,
         type: 3}
@@ -51394,10 +51394,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 0.9566321, y: 1.1691514, z: 2.3188596}
-  m_Center: {x: -0.048840158, y: 0.5073733, z: 0.054432493}
+  m_Size: {x: 0.95663214, y: 0.60163444, z: 3.7228935}
+  m_Center: {x: -0.04884012, y: 0.37689313, z: 0.75644726}
 --- !u!1001 &1488199234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71375,7 +71375,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.9566321, y: 1.2894756, z: 2.3188596}
   m_Center: {x: -0.04884018, y: 0.5675363, z: 0.05443259}
