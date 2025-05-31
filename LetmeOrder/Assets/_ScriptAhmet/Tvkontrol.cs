@@ -7,7 +7,6 @@ public class Tvkontrol : MonoBehaviour
     public GameObject pilObjesi;
     public GameObject kumandaObjesi;
     public GameObject tvObjesi; // tv (1)
-    public AudioSource tvSes;
     public GameObject sonrakiOlayObjesi;
 
     public NesneYokOlma nesneYokOlmaScripti;
@@ -27,10 +26,7 @@ public class Tvkontrol : MonoBehaviour
             tvVideo.Stop(); // Başlangıçta durdur
         }
 
-        if (tvSes != null)
-        {
-            tvSes.Stop();
-        }
+
     }
 
     void Update()
@@ -58,12 +54,9 @@ public class Tvkontrol : MonoBehaviour
                 tvVideo.Play(); // 🎬 Video başlat
             }
 
-            if (tvSes != null)
-            {
-                tvSes.Play(); // 🎵 Ses başlat
-            }
 
-            Invoke("TVSonrasiOlay", 10f); // 10 saniye sonra olay başlat
+
+            Invoke("TVSonrasiOlay", 12f); // 10 saniye sonra olay başlat
         }
     }
 
