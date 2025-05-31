@@ -4,14 +4,19 @@ using UnityEngine;
 
 public class Kapi1Degisim : MonoBehaviour
 {
-     public float rayUzaklik2 = 4f;
-     public float rayUzaklik3 = 6f;
-      public GameObject Kapi1;
+    public float rayUzaklik2 = 4f;
+    public float rayUzaklik3 = 6f;
+    public GameObject Kapi1;
     public GameObject Trigger;
     public GameObject degisim;
     public GameObject Corridor2;
     public GameObject Corridor1;
     public GameObject ilksahne;
+
+    public Animator kapikulpacik;
+
+
+    public AudioSource ses;
 
     void Start()
     {
@@ -35,29 +40,42 @@ public class Kapi1Degisim : MonoBehaviour
             {
                 if (hit.collider.gameObject == Kapi1)
                 {
-                    Debug.Log("SahneKapandi");
+
+                    ses.Play();
+                    kapikulpacik.Play("kapikulpacik");
+                    StartCoroutine(AnimasyonuTekrarla());
                     Trigger.SetActive(true);
                     Corridor1.SetActive(false);
                     Corridor2.SetActive(true);
-                   
+
                 }
             }
         }
-        
-       
-           Vector3 origin2 = transform.position;
-    Vector3 direction2 = transform.forward; // ya da farklı bir yön gerekiyorsa değiştir
-    Ray ray2 = new Ray(origin2, direction2);
-    RaycastHit hit2;
 
-    if (Physics.Raycast(ray2, out hit2, rayUzaklik3))
-    {
+
+        Vector3 origin2 = transform.position;
+        Vector3 direction2 = transform.forward; // ya da farklı bir yön gerekiyorsa değiştir
+        Ray ray2 = new Ray(origin2, direction2);
+        RaycastHit hit2;
+
+        if (Physics.Raycast(ray2, out hit2, rayUzaklik3))
+        {
             if (hit2.collider.gameObject == Trigger)
             {
                 Debug.Log("SahneKapandi");
                 degisim.SetActive(false);
-                 Trigger.SetActive(false);
+                Trigger.SetActive(false);
+            }
         }
     }
+    
+      IEnumerator AnimasyonuTekrarla()
+    {
+        while (true)
+        {
+
+            yield return new WaitForSeconds(2f);
+            kapikulpacik.Play("kapikulpidle");
+        }
     }
 }
