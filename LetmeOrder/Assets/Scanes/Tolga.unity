@@ -2163,7 +2163,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &71573951
 Transform:
   m_ObjectHideFlags: 0
@@ -21210,7 +21210,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1716643080}
+    m_TransformParent: {fileID: 1186341684}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4350908fa3f014cf2b7767b24f244527,
         type: 3}
@@ -21230,17 +21230,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4350908fa3f014cf2b7767b24f244527,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.492527
+      value: 4.443323
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4350908fa3f014cf2b7767b24f244527,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.142363
+      value: -8.634478
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4350908fa3f014cf2b7767b24f244527,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -32.647682
+      value: 1.5069227
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4350908fa3f014cf2b7767b24f244527,
         type: 3}
@@ -46717,7 +46717,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1186341684
 Transform:
   m_ObjectHideFlags: 0
@@ -46757,6 +46757,7 @@ Transform:
   - {fileID: 1142210220}
   - {fileID: 324731717}
   - {fileID: 791671818}
+  - {fileID: 544488776}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1189020448
@@ -49609,12 +49610,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4350908fa3f014cf2b7767b24f244527,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 93.03576
+      value: 101.11126
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4350908fa3f014cf2b7767b24f244527,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.492526
+      value: 3.49
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4350908fa3f014cf2b7767b24f244527,
         type: 3}
@@ -49624,7 +49625,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4350908fa3f014cf2b7767b24f244527,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -35.362244
+      value: -34.57
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4350908fa3f014cf2b7767b24f244527,
         type: 3}
@@ -49664,7 +49665,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 4350908fa3f014cf2b7767b24f244527,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 4350908fa3f014cf2b7767b24f244527,
         type: 3}
@@ -52281,8 +52282,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.4753404, y: 31.850527, z: 2.7531757}
-  m_Center: {x: -0.34172836, y: 15.425169, z: -0.0576371}
+  m_Size: {x: 10.209677, y: 31.850527, z: 7.4116926}
+  m_Center: {x: -0.83415866, y: 15.425008, z: -0.88626325}
 --- !u!1001 &1313633996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61567,6 +61568,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2620058801224697283, guid: 75cac37c3d789fd4aaa0acb15f0e1a5d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -27.354492
+      objectReference: {fileID: 0}
+    - target: {fileID: 2620058801224697283, guid: 75cac37c3d789fd4aaa0acb15f0e1a5d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -8.468262
+      objectReference: {fileID: 0}
     - target: {fileID: 3488622297654610797, guid: 75cac37c3d789fd4aaa0acb15f0e1a5d,
         type: 3}
       propertyPath: m_Pivot.x
@@ -66431,7 +66442,6 @@ Transform:
   - {fileID: 636863101}
   - {fileID: 419949324}
   - {fileID: 1128720747}
-  - {fileID: 544488776}
   - {fileID: 1256042046}
   - {fileID: 1748520536}
   - {fileID: 1935457048}

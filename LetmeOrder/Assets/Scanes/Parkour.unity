@@ -61077,6 +61077,21 @@ PrefabInstance:
       propertyPath: m_Intensity
       value: 2727.67
       objectReference: {fileID: 0}
+    - target: {fileID: 924452964482813062, guid: 730901a8e122e41c98c61ad1188d15d3,
+        type: 3}
+      propertyPath: useVolumetric
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 924452964482813062, guid: 730901a8e122e41c98c61ad1188d15d3,
+        type: 3}
+      propertyPath: m_PointlightHDType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3099267559635185677, guid: 730901a8e122e41c98c61ad1188d15d3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4462901200987127083, guid: 730901a8e122e41c98c61ad1188d15d3,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -61100,7 +61115,7 @@ PrefabInstance:
     - target: {fileID: 5528018898600484906, guid: 730901a8e122e41c98c61ad1188d15d3,
         type: 3}
       propertyPath: m_Intensity
-      value: 730.84534
+      value: 217.06107
       objectReference: {fileID: 0}
     - target: {fileID: 5528018898600484906, guid: 730901a8e122e41c98c61ad1188d15d3,
         type: 3}
@@ -61111,6 +61126,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ColorTemperature
       value: 10102
+      objectReference: {fileID: 0}
+    - target: {fileID: 5528018898600484906, guid: 730901a8e122e41c98c61ad1188d15d3,
+        type: 3}
+      propertyPath: m_UseBoundingSphereOverride
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5727432670622687545, guid: 730901a8e122e41c98c61ad1188d15d3,
         type: 3}

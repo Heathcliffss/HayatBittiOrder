@@ -827,6 +827,11 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7770895832614533141, guid: 005e2ac8953b2e74aa65741c9c577c83,
+        type: 3}
+      propertyPath: m_DirectAudioVolumes.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8798667301580936641, guid: 005e2ac8953b2e74aa65741c9c577c83,
         type: 3}
       propertyPath: m_IsActive
