@@ -8,6 +8,11 @@ public class EndGecis : MonoBehaviour
     public float interactionDistance = 3f;
     public string sceneToLoad = "YeniSahneAdi";
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))

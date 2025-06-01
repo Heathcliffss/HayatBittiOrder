@@ -8,6 +8,8 @@ public class NesneYokOlma : MonoBehaviour
     public GameObject oda1;
     public GameObject oda2;
 
+   
+
     [Header("Zamanlamalar")]
     public float odadaKalmaSuresi = 3f;
     public float gecisSuresi = 2f;
@@ -27,6 +29,7 @@ public class NesneYokOlma : MonoBehaviour
             enabled = false;
             return;
         }
+       
 
         // Malzemeleri topla (sadece oda1 için çünkü oda2 henüz aktif deðil)
         oda1Materyaller = GetAllMaterials(oda1);
@@ -45,6 +48,7 @@ public class NesneYokOlma : MonoBehaviour
 
     public IEnumerator OdaDegisimiRutini()
     {
+        
         gecisBasladi = true;
         yield return new WaitForSeconds(odadaKalmaSuresi);
 
@@ -109,4 +113,6 @@ public class NesneYokOlma : MonoBehaviour
 
         return materials;
     }
+
+    
 }
