@@ -61,7 +61,7 @@ MonoBehaviour:
   active: 1
   quality:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 3
   focusMode:
     m_OverrideState: 1
     m_Value: 2
@@ -73,7 +73,7 @@ MonoBehaviour:
     m_Value: 0
   nearFocusStart:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 3.99999
   nearFocusEnd:
     m_OverrideState: 1
     m_Value: 4
@@ -88,7 +88,7 @@ MonoBehaviour:
     m_Value: 5
   m_NearMaxBlur:
     m_OverrideState: 1
-    m_Value: 4
+    m_Value: 0.3
   m_FarSampleCount:
     m_OverrideState: 1
     m_Value: 7
@@ -273,7 +273,7 @@ MonoBehaviour:
     m_Value: 10
   intensity:
     m_OverrideState: 1
-    m_Value: 0.077
+    m_Value: 0.024
   response:
     m_OverrideState: 0
     m_Value: 0.8
@@ -454,7 +454,7 @@ MonoBehaviour:
     m_Value: {fileID: 0}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.042
+    m_Value: 0.015
   m_MaxSamples:
     m_OverrideState: 0
     m_Value: 6
