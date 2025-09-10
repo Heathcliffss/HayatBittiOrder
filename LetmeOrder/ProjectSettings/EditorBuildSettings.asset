@@ -20,4 +20,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scanes/End.unity
     guid: 0e7c8922fcb6d8d40a027525684298ea
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5ba5c108370f015408728beb4a3efd49,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: afc4b3a90b33bb44088c03c536aed245,
+      type: 2}

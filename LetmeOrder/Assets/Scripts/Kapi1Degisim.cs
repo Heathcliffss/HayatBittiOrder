@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
 public class Kapi1Degisim : MonoBehaviour
 {
     public float rayUzaklik2 = 4f;
@@ -14,6 +16,8 @@ public class Kapi1Degisim : MonoBehaviour
     public GameObject ilksahne;
     public GameObject kornis;
 
+    public XRGrabInteractable grab;
+
     public Animator kapikulpacik;
 
 
@@ -24,23 +28,32 @@ public class Kapi1Degisim : MonoBehaviour
         Trigger.SetActive(false);
         Corridor2.SetActive(false);
         ilksahne.SetActive(true);
+
+        grab = GetComponent<XRGrabInteractable>();
+        grab.selectEntered.AddListener(OnGrab);
+        //grab.selectExited.AddListener(OnRelaese);
+
+        
     }
+
+    void OnGrab(SelectEnterEventArgs args)
+    {
+        Debug.Log("AH");
+
+    }
+
+
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+       /*if ()
         {
-            Vector3 origin = transform.position;
-            Vector3 direction = transform.forward;
+           
 
-            Ray ray = new Ray(origin, direction);
-            RaycastHit hit;
+            
 
-            if (Physics.Raycast(ray, out hit, rayUzaklik2))
-            {
-                if (hit.collider.gameObject == Kapi1)
-                {
+            
 
                     ses.Play();
                     kapikulpacik.Play("kapikulpacik");
@@ -48,12 +61,11 @@ public class Kapi1Degisim : MonoBehaviour
                     Trigger.SetActive(true);
                     Corridor1.SetActive(false);
                     Corridor2.SetActive(true);
-                   
 
-                }
-            }
+
+             
         }
-
+*/
 
         Vector3 origin2 = transform.position;
         Vector3 direction2 = transform.forward; // ya da farklı bir yön gerekiyorsa değiştir
@@ -67,12 +79,12 @@ public class Kapi1Degisim : MonoBehaviour
                 Debug.Log("SahneKapandi");
                 degisim.SetActive(false);
                 Trigger.SetActive(false);
-                 kornis.SetActive(true);
+                kornis.SetActive(true);
             }
         }
     }
-    
-      IEnumerator AnimasyonuTekrarla()
+
+    IEnumerator AnimasyonuTekrarla()
     {
         while (true)
         {
