@@ -1,13 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+
 public class Kapi1Degisim : MonoBehaviour
 {
-    public float rayUzaklik2 = 4f;
-    public float rayUzaklik3 = 6f;
+    [Header("Kapı ve Sahne Objeleri")]
     public GameObject Kapi1;
     public GameObject Trigger;
     public GameObject degisim;
@@ -16,12 +14,13 @@ public class Kapi1Degisim : MonoBehaviour
     public GameObject ilksahne;
     public GameObject kornis;
 
+    [Header("Bileşenler")]
     public XRGrabInteractable grab;
-
     public Animator kapikulpacik;
-
-
     public AudioSource ses;
+
+    [Header("Ray Ayarları")]
+    public float rayUzaklik3 = 6f;
 
     void Start()
     {
@@ -29,46 +28,49 @@ public class Kapi1Degisim : MonoBehaviour
         Corridor2.SetActive(false);
         ilksahne.SetActive(true);
 
-        grab = GetComponent<XRGrabInteractable>();
-        grab.selectEntered.AddListener(OnGrab);
-        //grab.selectExited.AddListener(OnRelaese);
+        // Eğer bu objede XRGrabInteractable yoksa, eklemeyi unutma
+        if (grab == null)
+            grab = GetComponent<XRGrabInteractable>();
 
-        
+        // Grab başladığında çalışır
+        grab.selectEntered.AddListener(OnGrab);
+
+        // Eğer bırakıldığında da bir şey olmasını istiyorsan:
+        // grab.selectExited.AddListener(OnRelease);
     }
 
+    // Kapı ile ilk temas (Grab başladığında)
     void OnGrab(SelectEnterEventArgs args)
     {
-        Debug.Log("AH");
+        Debug.Log("Kapı ile etkileşim başladı!");
 
+        // Ses çal
+        if (ses != null) ses.Play();
+
+        // Kapı animasyonu oynat
+        if (kapikulpacik != null)
+            kapikulpacik.Play("kapikulpacik");
+
+        // Trigger ve sahne değişimleri
+        Trigger.SetActive(true);
+        Corridor1.SetActive(false);
+        Corridor2.SetActive(true);
+
+        // Animasyon tekrar için coroutine
+        StartCoroutine(AnimasyonuTekrarla());
     }
 
+    // Eğer bırakıldığında tetiklenecek bir şey varsa
+    void OnRelease(SelectExitEventArgs args)
+    {
+        Debug.Log("Kapı bırakıldı.");
+    }
 
-
-    // Update is called once per frame
     void Update()
     {
-       /*if ()
-        {
-           
-
-            
-
-            
-
-                    ses.Play();
-                    kapikulpacik.Play("kapikulpacik");
-                    StartCoroutine(AnimasyonuTekrarla());
-                    Trigger.SetActive(true);
-                    Corridor1.SetActive(false);
-                    Corridor2.SetActive(true);
-
-
-             
-        }
-*/
-
+        // Raycast ile sahne geçiş kontrolü
         Vector3 origin2 = transform.position;
-        Vector3 direction2 = transform.forward; // ya da farklı bir yön gerekiyorsa değiştir
+        Vector3 direction2 = transform.forward;
         Ray ray2 = new Ray(origin2, direction2);
         RaycastHit hit2;
 
@@ -88,9 +90,9 @@ public class Kapi1Degisim : MonoBehaviour
     {
         while (true)
         {
-
             yield return new WaitForSeconds(2f);
-            kapikulpacik.Play("kapikulpidle");
+            if (kapikulpacik != null)
+                kapikulpacik.Play("kapikulpidle");
         }
     }
 }
