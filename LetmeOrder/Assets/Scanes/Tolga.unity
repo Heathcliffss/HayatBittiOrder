@@ -37353,7 +37353,7 @@ PrefabInstance:
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.241
+      value: 1.052
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
         type: 3}
@@ -49947,6 +49947,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TunnelingVignette
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429981633443581377, guid: 6c8af5c8012f01440af6cb2bc3eb987c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8429981633443581382, guid: 6c8af5c8012f01440af6cb2bc3eb987c,
         type: 3}
@@ -63014,7 +63019,7 @@ PrefabInstance:
     - target: {fileID: 2620058801224697283, guid: 75cac37c3d789fd4aaa0acb15f0e1a5d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -8.468246
+      value: -8.468262
       objectReference: {fileID: 0}
     - target: {fileID: 3488622297654610797, guid: 75cac37c3d789fd4aaa0acb15f0e1a5d,
         type: 3}

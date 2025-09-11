@@ -10,6 +10,7 @@ TagManager:
   - Door1
   - Door
   - Plak
+  - "T\u0131rmanmaduvari"
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - Water
   - UI
   - Wall
-  - 
+  - "T\u0131rmanmaduvari"
   - 
   - 
   - 
