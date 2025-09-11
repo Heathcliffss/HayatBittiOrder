@@ -1,20 +1,27 @@
 ﻿using UnityEngine;
 using UnityEngine.Video;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
-public class Tvkontrol : MonoBehaviour
+
+public class TvKontrol : MonoBehaviour
 {
     public GameObject tv;
     public GameObject pilObjesi;
     public GameObject kumandaObjesi;
-    public GameObject tvObjesi; // TV (1)
+    public GameObject tvObjesi;
     public GameObject sonrakiOlayObjesi;
 
     public NesneYokOlma nesneYokOlmaScripti;
 
     private VideoPlayer tvVideo;
-    private bool pilAlindi = false;
+    private bool pilTakildi = false;
     private bool kumandaAlindi = false;
     private bool tvAcildi = false;
+
+    // XR için etkileşim
+    private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable pilGrab;
+    private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable kumandaGrab;
 
     void Start()
     {
@@ -23,45 +30,75 @@ public class Tvkontrol : MonoBehaviour
 
         if (tvVideo != null)
         {
-            tvVideo.Stop(); // Başlangıçta durdur
+            tvVideo.Stop();
+        }
+
+        pilGrab = pilObjesi.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
+        kumandaGrab = kumandaObjesi.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
+
+        // Pil bırakıldığında kumandaya yerleştirilmiş mi kontrol et
+        if (pilGrab != null)
+        {
+            pilGrab.selectExited.AddListener(OnPilBırakıldı);
+        }
+
+        if (kumandaGrab != null)
+        {
+            kumandaGrab.selectEntered.AddListener(OnKumandaAlindi);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        // Event temizliği
+        if (pilGrab != null)
+            pilGrab.selectExited.RemoveListener(OnPilBırakıldı);
+
+        if (kumandaGrab != null)
+            kumandaGrab.selectEntered.RemoveListener(OnKumandaAlindi);
+    }
+
+    private void OnPilBırakıldı(SelectExitEventArgs args)
+    {
+        // Eğer pil kumandanın trigger alanına girerse pil takıldı say
+        if (Vector3.Distance(pilObjesi.transform.position, kumandaObjesi.transform.position) < 0.3f)
+        {
+            pilTakildi = true;
+            pilObjesi.SetActive(false); // pili yok et
+        }
+    }
+
+    private void OnKumandaAlindi(SelectEnterEventArgs args)
+    {
+        if (pilTakildi && !kumandaAlindi)
+        {
+            kumandaAlindi = true;
         }
     }
 
     void Update()
     {
-        Vector3 playerPos = PlayerPozisyonu();
-
-        // Pil alma (menzil 4f)
-        if (Vector3.Distance(pilObjesi.transform.position, playerPos) < 4f && Input.GetKeyDown(KeyCode.E))
+        if (kumandaAlindi && !tvAcildi && GripTusunaBasildiMi())
         {
-            pilAlindi = true;
-            pilObjesi.SetActive(false);
-        }
-
-        // Kumanda alma (menzil 4f)
-        if (pilAlindi && !kumandaAlindi &&
-            Vector3.Distance(kumandaObjesi.transform.position, playerPos) < 4f && Input.GetKeyDown(KeyCode.E))
-        {
-            kumandaAlindi = true;
-            kumandaObjesi.SetActive(false);
-        }
-
-        // TV açma: kumanda alındı, TV kapalı, E tuşu ve TV’ye bakılıyor
-        if (kumandaAlindi && !tvAcildi && Input.GetKeyDown(KeyCode.E))
-        {
-            if (BakiyorMu(tvObjesi.transform, Camera.main.transform, 30f))  // 30 derece açı eşiği
+            if (BakiyorMu(tvObjesi.transform, Camera.main.transform, 30f))
             {
                 tvAcildi = true;
 
                 if (tvVideo != null)
                 {
                     tv.SetActive(true);
-                    tvVideo.Play(); // 🎬 Video başlat
+                    tvVideo.Play();
                 }
 
                 Invoke("TVSonrasiOlay", 12f);
             }
         }
+    }
+
+    bool GripTusunaBasildiMi()
+    {
+        // Her iki el için XR controller input'ları kontrol edilir
+        return InputHelpers.IsPressed(InputDevices.GetDeviceAtXRNode(XRNode.RightHand), InputHelpers.Button.Grip, out bool gripBasili, 0.1f) && gripBasili;
     }
 
     void TVSonrasiOlay()
@@ -70,11 +107,6 @@ public class Tvkontrol : MonoBehaviour
         {
             StartCoroutine(nesneYokOlmaScripti.OdaDegisimiRutini());
         }
-    }
-
-    Vector3 PlayerPozisyonu()
-    {
-        return Camera.main.transform.position;
     }
 
     bool BakiyorMu(Transform hedef, Transform bakisNoktasi, float maxAci)
