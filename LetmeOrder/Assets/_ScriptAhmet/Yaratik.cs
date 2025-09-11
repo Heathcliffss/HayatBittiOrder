@@ -12,8 +12,6 @@ public class Yaratik : MonoBehaviour
     public Light ortamIsigi; // Işık objesi
     public bool kovalamayaBaslasin = false; // Kovalamaya başlama durumu
 
-
-
     void Update()
     {
         if (!kovalamayaBaslasin || ortamIsigi == null || !ortamIsigi.enabled || oyuncu == null)
@@ -23,18 +21,13 @@ public class Yaratik : MonoBehaviour
 
         if (mesafe <= takipMesafesi && mesafe > durmaMesafesi)
         {
-            Vector3 yon = (oyuncu.position - transform.position).normalized;
-            Vector3 yeniPozisyon = transform.position + yon * hiz * Time.deltaTime;
+            // MoveTowards ile kontrollü şekilde yaklaş
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                oyuncu.position,
+                hiz * Time.deltaTime
+            );
 
-            // Yaratığın yeni pozisyonu oyuncuya çok yaklaşmasın diye sınırla
-            float yeniMesafe = Vector3.Distance(yeniPozisyon, oyuncu.position);
-            if (yeniMesafe < durmaMesafesi)
-            {
-                // Yeni pozisyon oyuncuya çok yakınsa durma mesafesine göre pozisyon ayarla
-                yeniPozisyon = oyuncu.position - yon * durmaMesafesi;
-            }
-
-            transform.position = yeniPozisyon;
             transform.LookAt(oyuncu);
         }
         else if (mesafe <= durmaMesafesi)
@@ -43,7 +36,8 @@ public class Yaratik : MonoBehaviour
             transform.LookAt(oyuncu);
         }
     }
-     void OnTriggerEnter(Collider other)
+
+    void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -52,4 +46,3 @@ public class Yaratik : MonoBehaviour
         }
     }
 }
-
